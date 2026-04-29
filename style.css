@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,20 +12,61 @@ body {
     line-height: 1.7;
 }
 
-/* HERO */
+/* ===== NAVBAR ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background: #0f0f0fcc;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav-logo span {
+    color: #6c63ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+/* ===== HERO ===== */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 80px 20px 60px;
-    background: #090909;
+    background: #161616;
     border-bottom: 1px solid #2a2a2a;
 }
 
 .avatar {
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
@@ -48,10 +90,32 @@ body {
     color: #aaa;
 }
 
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: #6c63ff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #574fd6;
+}
+
 .social-links {
     display: flex;
     gap: 16px;
-    margin-top: 24px;
 }
 
 .social-links a {
@@ -69,7 +133,7 @@ body {
     color: #fff;
 }
 
-/* SEÇÕES */
+/* ===== SEÇÕES ===== */
 .section {
     max-width: 860px;
     margin: 0 auto;
@@ -80,10 +144,12 @@ body {
 .section h2 {
     font-size: 1.6rem;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6c63ff33;
 }
 
-/* HABILIDADES */
+/* ===== HABILIDADES ===== */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +166,57 @@ body {
     font-size: 0.9rem;
 }
 
-/* PROJETOS */
+/* ===== FORMAÇÃO ===== */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid #6c63ff44;
+    padding-left: 24px;
+    margin-left: 8px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -33px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #6c63ff;
+    border: 2px solid #0f0f0f;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: #6c63ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.timeline-content h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 4px;
+}
+
+.timeline-content p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+/* ===== PROJETOS ===== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -112,6 +228,9 @@ body {
     border: 1px solid #2a2a3e;
     border-radius: 10px;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     transition: transform 0.2s, border-color 0.2s;
 }
 
@@ -123,13 +242,27 @@ body {
 .card h3 {
     font-size: 1.1rem;
     color: #fff;
-    margin-bottom: 10px;
 }
 
 .card p {
     color: #aaa;
     font-size: 0.9rem;
-    margin-bottom: 16px;
+    flex: 1;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.card-tags span {
+    background: #6c63ff22;
+    color: #a89fff;
+    border: 1px solid #6c63ff44;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
 }
 
 .card-links {
@@ -147,7 +280,7 @@ body {
     text-decoration: underline;
 }
 
-/* CONTATO */
+/* ===== CONTATO ===== */
 .contact-list {
     display: flex;
     flex-direction: column;
@@ -201,10 +334,25 @@ body {
     text-decoration: underline;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
     text-align: center;
     padding: 30px;
     color: #555;
     font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .lang-item {
+        grid-template-columns: 90px 1fr 90px;
+    }
 }
